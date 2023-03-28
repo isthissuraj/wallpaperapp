@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
+import 'package:wallpaperapp/views/widgets/searchbar.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,6 +15,12 @@ class HomeScreen extends StatelessWidget {
         title: const CustomAppBar(),
         backgroundColor: Colors.white,
         centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Container(
+              padding: EdgeInsets.symmetric(horizontal: 10), child: SearchBar())
+        ],
       ),
     );
   }
