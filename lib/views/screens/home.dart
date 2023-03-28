@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:wallpaperapp/views/widgets/categoryblock.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
 import 'package:wallpaperapp/views/widgets/searchbar.dart';
@@ -21,8 +20,8 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 10),
-              child: SearchBar(),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: const SearchBar(),
             ),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 20),
