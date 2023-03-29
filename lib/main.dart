@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaperapp/views/screens/categoryscr.dart';
 import 'package:wallpaperapp/views/screens/home.dart';
 
 void main() {
@@ -15,6 +16,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const HomeScreen());
+        home: const CategoryScreen());
   }
 }
