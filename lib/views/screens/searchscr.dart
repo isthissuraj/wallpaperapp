@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
 import 'package:wallpaperapp/views/widgets/searchbar.dart';
 
