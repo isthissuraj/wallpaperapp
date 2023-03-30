@@ -46,10 +46,12 @@ class CategoryScreen extends StatelessWidget {
                 left: 150,
                 top: 45,
                 child: Column(
+                  // ignore: prefer_const_literals_to_create_immutables
                   children: [
+                    // ignore: prefer_const_constructors
                     Text(
                       "Category",
-                      style: TextStyle(
+                      style: const TextStyle(
                           fontSize: 25,
                           color: Colors.white54,
                           fontWeight: FontWeight.bold),
