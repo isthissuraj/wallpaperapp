@@ -23,7 +23,7 @@ class CategoryBlock extends StatelessWidget {
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12), color: Colors.black26),
           ),
-          Positioned(
+          const Positioned(
               left: 35,
               top: 15,
               child: Text(
