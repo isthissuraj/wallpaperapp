@@ -56,7 +56,7 @@ class CategoryScreen extends StatelessWidget {
                           color: Colors.white54,
                           fontWeight: FontWeight.bold),
                     ),
-                    Text(
+                    const Text(
                       "Flowers",
                       style: TextStyle(
                           fontSize: 25,
