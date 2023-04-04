@@ -15,14 +15,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<PhotosModel> trendingWallList = [];
 
-  getTrendingWallpapers() {}
+  getTrendingWallpapers() async {
+    trendingWallList = await ApiOperations.getTrendingWallpapers();
+    setState(() {});
+  }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
-    ApiOperations.getTrendingWallpapers();
+    getTrendingWallpapers();
   }
 
   @override
@@ -63,7 +65,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       mainAxisSpacing: 12,
                       crossAxisSpacing: 12,
                       mainAxisExtent: 400),
-                  itemCount: 16,
+                  itemCount: trendingWallList.length,
                   itemBuilder: ((context, index) => Container(
                         height: 800,
                         width: 50,
@@ -77,7 +79,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               height: 800,
                               width: 50,
                               fit: BoxFit.cover,
-                              "https://images.pexels.com/photos/13415959/pexels-photo-13415959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                              trendingWallList[index].imgSrc),
                         ),
                       ))),
             )
