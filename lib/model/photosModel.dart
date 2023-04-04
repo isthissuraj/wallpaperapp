@@ -1,3 +1,4 @@
+//data modelling part
 class PhotosModel {
   String imgSrc;
   String photoName;
