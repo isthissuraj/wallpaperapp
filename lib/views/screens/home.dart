@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallpaperapp/controller/apiOperations.dart';
+import 'package:wallpaperapp/model/photosModel.dart';
 import 'package:wallpaperapp/views/widgets/categoryblock.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
 import 'package:wallpaperapp/views/widgets/searchbar.dart';
@@ -12,6 +13,10 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  List<PhotosModel> trendingWallList = [];
+
+  getTrendingWallpapers() {}
+
   @override
   void initState() {
     // TODO: implement initState
