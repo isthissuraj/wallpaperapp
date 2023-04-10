@@ -7,6 +7,7 @@ class ApiOperations {
   static List<PhotosModel> trendingWallpapers = [];
   static List<PhotosModel> searchReasultList = [];
 
+// trending wallpaper method
   static Future<List<PhotosModel>> getTrendingWallpapers() async {
     await http.get(Uri.parse("https://api.pexels.com/v1/curated"), headers: {
       "Authorization":
@@ -22,6 +23,7 @@ class ApiOperations {
     return trendingWallpapers;
   }
 
+// serach wallpaper method
   searchWallpapers(String query) async {
     await http.get(
         Uri.parse(
