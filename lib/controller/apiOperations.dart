@@ -24,6 +24,7 @@ class ApiOperations {
   }
 
 // serach wallpaper method
+
   searchWallpapers(String query) async {
     await http.get(
         Uri.parse(
