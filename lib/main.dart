@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:wallpaperapp/views/screens/categoryscr.dart';
+
 import 'package:wallpaperapp/views/screens/home.dart';
 
 void main() {
