@@ -35,8 +35,8 @@ class ApiOperations {
         }).then((value) {
       Map<String, dynamic> jsonData = jsonDecode(value.body);
       List photos = jsonData["photos"];
+      searchReasultList.clear();
       photos.forEach((element) {
-        searchReasultList.clear();
         searchReasultList.add(PhotosModel.fromApiToApp(element));
       });
     });
