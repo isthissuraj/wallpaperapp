@@ -24,6 +24,7 @@ class _SearchScreenState extends State<SearchScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    getSearchResult();
   }
 
   @override
