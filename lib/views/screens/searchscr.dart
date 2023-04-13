@@ -41,7 +41,7 @@ class _SearchScreenState extends State<SearchScreen> {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: const SearchBar(),
+              child: SearchBar(),
             ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
