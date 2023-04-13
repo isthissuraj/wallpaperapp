@@ -16,7 +16,7 @@ class CustomAppBar extends StatelessWidget {
                   fontWeight: FontWeight.bold),
               children: [
                 TextSpan(
-                    text: " Hub",
+                    text: "Hub",
                     style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
