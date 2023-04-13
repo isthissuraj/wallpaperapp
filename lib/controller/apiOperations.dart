@@ -25,7 +25,7 @@ class ApiOperations {
 
 // serach wallpaper method
 
-  searchWallpapers(String query) async {
+  static searchWallpapers(String query) async {
     await http.get(
         Uri.parse(
             "https://api.pexels.com/v1/search?query=$query&per_page=30&page=1"),
