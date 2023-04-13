@@ -44,6 +44,9 @@ class _SearchScreenState extends State<SearchScreen> {
               padding: const EdgeInsets.symmetric(horizontal: 10),
               child: SearchBar(),
             ),
+            SizedBox(
+              height: 10,
+            ),
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 10),
               height: MediaQuery.of(context).size.height,
