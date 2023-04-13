@@ -62,7 +62,7 @@ class _SearchScreenState extends State<SearchScreen> {
                         width: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.cyanAccent,
+                          color: Colors.orangeAccent,
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
