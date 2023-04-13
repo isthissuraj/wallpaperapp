@@ -67,7 +67,7 @@ class _SearchScreenState extends State<SearchScreen> {
                               height: 800,
                               width: 50,
                               fit: BoxFit.cover,
-                              "https://images.pexels.com/photos/13415959/pexels-photo-13415959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                              searchResults[index].imgSrc),
                         ),
                       ))),
             )
