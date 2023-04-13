@@ -9,7 +9,7 @@ class CustomAppBar extends StatelessWidget {
       child: RichText(
           textAlign: TextAlign.center,
           text: const TextSpan(
-              text: "Wallpaper",
+              text: "Wall",
               style: TextStyle(
                   color: Colors.black,
                   fontSize: 20,
