@@ -41,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: const SearchBar(),
+              child: SearchBar(),
             ),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 20),
