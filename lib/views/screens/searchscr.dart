@@ -1,9 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:wallpaperapp/controller/apiOperations.dart';
+import 'package:wallpaperapp/model/photosModel.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
 import 'package:wallpaperapp/views/widgets/searchbar.dart';
 
-class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+class SearchScreen extends StatefulWidget {
+  String query;
+  SearchScreen({super.key, required this.query});
+
+  @override
+  State<SearchScreen> createState() => _SearchScreenState();
+}
+
+class _SearchScreenState extends State<SearchScreen> {
+  late List<PhotosModel> searchResults;
+
+  getSearchResult() async {
+    searchResults = await ApiOperations.searchWallpapers(widget.query);
+    setState(() {});
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +53,7 @@ class SearchScreen extends StatelessWidget {
                       mainAxisSpacing: 12,
                       crossAxisSpacing: 12,
                       mainAxisExtent: 400),
-                  itemCount: 16,
+                  itemCount: searchResults.length,
                   itemBuilder: ((context, index) => Container(
                         height: 800,
                         width: 50,
