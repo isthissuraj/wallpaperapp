@@ -128,7 +128,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                     height: 800,
                                     width: 50,
                                     fit: BoxFit.cover,
-                                    "https://images.pexels.com/photos/16000872/pexels-photo-16000872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"),
+                                    categoryResult[index].imgSrc),
                               ),
                             ))),
                   )
