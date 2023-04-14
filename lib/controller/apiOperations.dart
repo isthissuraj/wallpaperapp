@@ -1,11 +1,15 @@
 import 'dart:convert';
+import 'dart:math';
 
 import 'package:http/http.dart' as http;
 import 'package:wallpaperapp/model/photosModel.dart';
 
+import '../model/categoryModel.dart';
+
 class ApiOperations {
   static List<PhotosModel> trendingWallpapers = [];
   static List<PhotosModel> searchReasultList = [];
+  static List<PhotosModel> categoryModelList =[];
 
 // trending wallpaper method
   static Future<List<PhotosModel>> getTrendingWallpapers() async {
@@ -43,6 +47,32 @@ class ApiOperations {
 
     return searchReasultList;
   }
+
+  getCategoriesList() {
+    List categoryName = [
+      "Nature",
+      "Cars",
+      "Bikes",
+      "Streets",
+      "City",
+      "Flower"
+    ];
+
+    categoryModelList.clear();
+
+    categoryName.forEach((catName) async {
+      final random = Random();
+
+      PhotosModel photosModel =
+          (await searchWallpapers(catName))[0 + random.nextInt(11 - 0)];
+      print("img src is here");
+      print(photosModel.imgSrc);
+      getCategoriesList.add(CategoryModel())
+    });
+  }
 }
+
+
+
 
 // emojies 🎶😎
