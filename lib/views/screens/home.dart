@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wallpaperapp/controller/apiOperations.dart';
+import 'package:wallpaperapp/model/categoryModel.dart';
 import 'package:wallpaperapp/model/photosModel.dart';
 import 'package:wallpaperapp/views/widgets/categoryblock.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
@@ -14,6 +15,17 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<PhotosModel> trendingWallList = [];
+  late List<CategoryModel> catModList;
+  bool isLoading = true;
+
+  getCatDetails() async {
+    catModList = await ApiOperations.getCategoriesList();
+    print("GETTING CATEGORY MOD LIST");
+    print(catModList);
+    setState(() {
+      catModList = catModList;
+    });
+  }
 
   getTrendingWallpapers() async {
     trendingWallList = await ApiOperations.getTrendingWallpapers();
@@ -24,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void initState() {
     super.initState();
     getTrendingWallpapers();
+    getCatDetails();
   }
 
   @override
@@ -49,9 +62,13 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
-                    itemCount: 30,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) => const CategoryBlock()),
+                  itemCount: 30,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: ((context, index) => CategoryBlock(
+                        categoryImgSrc: catModList[index].catImgUrl,
+                        categoryName: catModList[index].catName,
+                      )),
+                ),
               ),
             ),
             Container(
@@ -70,7 +87,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         width: 50,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(20),
-                          color: Colors.cyanAccent,
+                          color: Colors.orangeAccent,
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
