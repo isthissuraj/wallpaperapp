@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:wallpaperapp/controller/apiOperations.dart';
 import 'package:wallpaperapp/model/photosModel.dart';
