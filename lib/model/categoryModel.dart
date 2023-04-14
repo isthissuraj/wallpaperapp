@@ -4,7 +4,7 @@ class CategoryModel {
 
   CategoryModel({required this.catImgUrl, required this.catName});
 
-  static CategoryModel fromApiToAPP(Map<String, dynamic> category) {
+  static CategoryModel fromApi2App(Map<String, dynamic> category) {
     return CategoryModel(
         catImgUrl: category["imgUrl"], catName: category["CategoryName"]);
   }
