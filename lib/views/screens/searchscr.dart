@@ -66,20 +66,23 @@ class _SearchScreenState extends State<SearchScreen> {
                                   builder: (context) => FullScreen(
                                       imgUrl: searchResults[index].imgSrc)));
                         },
-                        child: Container(
-                          height: 800,
-                          width: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Colors.orangeAccent,
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20),
-                            child: Image.network(
-                                height: 800,
-                                width: 50,
-                                fit: BoxFit.cover,
-                                searchResults[index].imgSrc),
+                        child: Hero(
+                          tag: searchResults[index].imgSrc,
+                          child: Container(
+                            height: 800,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.orangeAccent,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                  height: 800,
+                                  width: 50,
+                                  fit: BoxFit.cover,
+                                  searchResults[index].imgSrc),
+                            ),
                           ),
                         ),
                       ))),

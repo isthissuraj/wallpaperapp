@@ -93,20 +93,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                         imgUrl:
                                             trendingWallList[index].imgSrc)));
                           },
-                          child: Container(
-                            height: 800,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.orangeAccent,
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.network(
-                                  height: 800,
-                                  width: 50,
-                                  fit: BoxFit.cover,
-                                  trendingWallList[index].imgSrc),
+                          child: Hero(
+                            tag: trendingWallList[index].imgSrc,
+                            child: Container(
+                              height: 800,
+                              width: 50,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(20),
+                                color: Colors.orangeAccent,
+                              ),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(20),
+                                child: Image.network(
+                                    height: 800,
+                                    width: 50,
+                                    fit: BoxFit.cover,
+                                    trendingWallList[index].imgSrc),
+                              ),
                             ),
                           ),
                         ),

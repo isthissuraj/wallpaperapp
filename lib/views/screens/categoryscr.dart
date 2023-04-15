@@ -123,20 +123,23 @@ class _CategoryScreenState extends State<CategoryScreen> {
                                             imgUrl:
                                                 categoryResult[index].imgSrc)));
                               },
-                              child: Container(
-                                height: 1200,
-                                width: 50,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(20),
-                                  color: Colors.orangeAccent,
-                                ),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Image.network(
-                                      height: 800,
-                                      width: 50,
-                                      fit: BoxFit.cover,
-                                      categoryResult[index].imgSrc),
+                              child: Hero(
+                                tag: categoryResult[index].imgSrc,
+                                child: Container(
+                                  height: 1200,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.orangeAccent,
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image.network(
+                                        height: 800,
+                                        width: 50,
+                                        fit: BoxFit.cover,
+                                        categoryResult[index].imgSrc),
+                                  ),
                                 ),
                               ),
                             ))),
