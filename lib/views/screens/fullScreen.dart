@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class FullScreen extends StatelessWidget {
   String imgUrl;
   FullScreen({super.key, required this.imgUrl});
