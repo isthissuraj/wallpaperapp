@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wallpaperapp/controller/apiOperations.dart';
 import 'package:wallpaperapp/model/categoryModel.dart';
 import 'package:wallpaperapp/model/photosModel.dart';
+import 'package:wallpaperapp/views/screens/fullScreen.dart';
 import 'package:wallpaperapp/views/widgets/categoryblock.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
 import 'package:wallpaperapp/views/widgets/searchbar.dart';
@@ -82,20 +83,32 @@ class _HomeScreenState extends State<HomeScreen> {
                       crossAxisSpacing: 12,
                       mainAxisExtent: 400),
                   itemCount: trendingWallList.length,
-                  itemBuilder: ((context, index) => Container(
-                        height: 800,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.orangeAccent,
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.network(
-                              height: 800,
-                              width: 50,
-                              fit: BoxFit.cover,
-                              trendingWallList[index].imgSrc),
+                  itemBuilder: ((context, index) => GridTile(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => FullScreen(
+                                        imgUrl:
+                                            trendingWallList[index].imgSrc)));
+                          },
+                          child: Container(
+                            height: 800,
+                            width: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Colors.orangeAccent,
+                            ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(20),
+                              child: Image.network(
+                                  height: 800,
+                                  width: 50,
+                                  fit: BoxFit.cover,
+                                  trendingWallList[index].imgSrc),
+                            ),
+                          ),
                         ),
                       ))),
             )
