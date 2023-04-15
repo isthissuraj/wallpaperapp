@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:wallpaperapp/controller/apiOperations.dart';
 import 'package:wallpaperapp/model/photosModel.dart';
+import 'package:wallpaperapp/views/screens/fullScreen.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
 import 'package:wallpaperapp/views/widgets/searchbar.dart';
 
@@ -57,20 +58,29 @@ class _SearchScreenState extends State<SearchScreen> {
                       crossAxisSpacing: 12,
                       mainAxisExtent: 400),
                   itemCount: searchResults.length,
-                  itemBuilder: ((context, index) => Container(
-                        height: 800,
-                        width: 50,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.orangeAccent,
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Image.network(
-                              height: 800,
-                              width: 50,
-                              fit: BoxFit.cover,
-                              searchResults[index].imgSrc),
+                  itemBuilder: ((context, index) => InkWell(
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FullScreen(
+                                      imgUrl: searchResults[index].imgSrc)));
+                        },
+                        child: Container(
+                          height: 800,
+                          width: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Colors.orangeAccent,
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(20),
+                            child: Image.network(
+                                height: 800,
+                                width: 50,
+                                fit: BoxFit.cover,
+                                searchResults[index].imgSrc),
+                          ),
                         ),
                       ))),
             )
