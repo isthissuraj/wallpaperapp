@@ -17,7 +17,7 @@ class InfoScreen extends StatelessWidget {
           title: const CustomAppBar(),
         ),
         body: Center(
-          child: Container(
+          child: SizedBox(
             // padding: EdgeInsets.all(100),
             height: 150,
             width: 200,
