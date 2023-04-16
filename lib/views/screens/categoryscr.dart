@@ -103,7 +103,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 ),
                 Container(
                   margin: const EdgeInsets.symmetric(horizontal: 10),
-                  height: 530,
+                  height: 660,
                   child: GridView.builder(
                       physics: const BouncingScrollPhysics(),
                       gridDelegate:

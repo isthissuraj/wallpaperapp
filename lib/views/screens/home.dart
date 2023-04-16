@@ -90,7 +90,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
-                    height: 550,
+                    height: 660,
                     child: RefreshIndicator(
                       onRefresh: () async {
                         Navigator.pushReplacement(

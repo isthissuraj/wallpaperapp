@@ -54,7 +54,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   ),
                   Container(
                     margin: const EdgeInsets.symmetric(horizontal: 10),
-                    height: 630,
+                    height: 720,
                     child: GridView.builder(
                         physics: const BouncingScrollPhysics(),
                         gridDelegate:
