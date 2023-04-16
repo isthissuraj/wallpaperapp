@@ -48,104 +48,102 @@ class _CategoryScreenState extends State<CategoryScreen> {
           ? Center(
               child: CircularProgressIndicator(),
             )
-          : SingleChildScrollView(
-              child: Column(
-                children: [
-                  Stack(children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(20),
-                        child: Image.network(
-                            height: 150,
-                            width: MediaQuery.of(context).size.width,
-                            fit: BoxFit.cover,
-                            widget.catImgUrl),
-                      ),
+          : Column(
+              children: [
+                Stack(children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image.network(
+                          height: 150,
+                          width: MediaQuery.of(context).size.width,
+                          fit: BoxFit.cover,
+                          widget.catImgUrl),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20),
-                          color: Colors.black38,
-                        ),
-                        height: 150,
-                        width: MediaQuery.of(context).size.width,
-                      ),
-                    ),
-                    Positioned(
-                      left: 150,
-                      top: 45,
-                      child: Column(
-                        // ignore: prefer_const_literals_to_create_immutables
-                        children: [
-                          // ignore: prefer_const_constructors
-                          Text(
-                            "Category",
-                            style: const TextStyle(
-                                fontSize: 25,
-                                color: Colors.white54,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            widget.catName,
-                            style: const TextStyle(
-                                fontSize: 25,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          )
-                        ],
-                      ),
-                    ),
-                  ]),
-                  const SizedBox(
-                    height: 10,
                   ),
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 10),
-                    height: MediaQuery.of(context).size.height,
-                    child: GridView.builder(
-                        physics: const BouncingScrollPhysics(),
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                mainAxisSpacing: 12,
-                                crossAxisSpacing: 12,
-                                mainAxisExtent: 400),
-                        itemCount: 16,
-                        itemBuilder: ((context, index) => InkWell(
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => FullScreen(
-                                            imgUrl:
-                                                categoryResult[index].imgSrc)));
-                              },
-                              child: Hero(
-                                tag: categoryResult[index].imgSrc,
-                                child: Container(
-                                  height: 700,
-                                  width: 50,
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(20),
-                                    color: Colors.orangeAccent,
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image.network(
-                                        height: 800,
-                                        width: 50,
-                                        fit: BoxFit.cover,
-                                        categoryResult[index].imgSrc),
-                                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.black38,
+                      ),
+                      height: 150,
+                      width: MediaQuery.of(context).size.width,
+                    ),
+                  ),
+                  Positioned(
+                    left: 150,
+                    top: 45,
+                    child: Column(
+                      // ignore: prefer_const_literals_to_create_immutables
+                      children: [
+                        // ignore: prefer_const_constructors
+                        Text(
+                          "Category",
+                          style: const TextStyle(
+                              fontSize: 25,
+                              color: Colors.white54,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Text(
+                          widget.catName,
+                          style: const TextStyle(
+                              fontSize: 25,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                  ),
+                ]),
+                const SizedBox(
+                  height: 10,
+                ),
+                Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 10),
+                  height: 530,
+                  child: GridView.builder(
+                      physics: const BouncingScrollPhysics(),
+                      gridDelegate:
+                          const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              mainAxisSpacing: 12,
+                              crossAxisSpacing: 12,
+                              mainAxisExtent: 400),
+                      itemCount: categoryResult.length,
+                      itemBuilder: ((context, index) => InkWell(
+                            onTap: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => FullScreen(
+                                          imgUrl:
+                                              categoryResult[index].imgSrc)));
+                            },
+                            child: Hero(
+                              tag: categoryResult[index].imgSrc,
+                              child: Container(
+                                height: 500,
+                                width: 50,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(20),
+                                  color: Colors.orangeAccent,
+                                ),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(20),
+                                  child: Image.network(
+                                      height: 800,
+                                      width: 50,
+                                      fit: BoxFit.cover,
+                                      categoryResult[index].imgSrc),
                                 ),
                               ),
-                            ))),
-                  )
-                ],
-              ),
+                            ),
+                          ))),
+                )
+              ],
             ),
     );
   }
