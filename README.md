@@ -4,9 +4,12 @@ WallHub is a wallpaper app in which you can download different types of wallpape
 
 ## Features
 
-- Light/dark mode toggle soon
-- setaswallpaper
+- Light/dark mode toggle (soon)
+
+- set as wallpaper (soon)
+
 - Fullscreen mode
+
 - downlaod wallpaper
 
 ## 🔗 Links
@@ -15,4 +18,7 @@ WallHub is a wallpaper app in which you can download different types of wallpape
 [![twitter](https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/is_this_suraj)
 
 
+## Acknowledgements
 
+ - [Pexels API](https://www.pexels.com/)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
