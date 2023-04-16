@@ -39,6 +39,7 @@ dependencies:
   http: ^0.13.5
   image_downloader: ^0.31.0
   open_file: ^3.2.1
+  url_launcher: ^6.1.10
   
   
 

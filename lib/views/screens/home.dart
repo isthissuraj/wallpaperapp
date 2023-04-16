@@ -3,6 +3,7 @@ import 'package:wallpaperapp/controller/apiOperations.dart';
 import 'package:wallpaperapp/model/categoryModel.dart';
 import 'package:wallpaperapp/model/photosModel.dart';
 import 'package:wallpaperapp/views/screens/fullScreen.dart';
+import 'package:wallpaperapp/views/screens/infoScreen.dart';
 import 'package:wallpaperapp/views/widgets/categoryblock.dart';
 import 'package:wallpaperapp/views/widgets/customappbar.dart';
 import 'package:wallpaperapp/views/widgets/searchbar.dart';
@@ -51,6 +52,17 @@ class _HomeScreenState extends State<HomeScreen> {
         title: const CustomAppBar(),
         backgroundColor: Colors.white,
         centerTitle: true,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => InfoScreen()));
+              },
+              icon: Icon(
+                Icons.info,
+                color: Colors.black,
+              ))
+        ],
       ),
       body: isLoading
           ? Center(child: CircularProgressIndicator())
