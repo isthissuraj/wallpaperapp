@@ -38,6 +38,8 @@ class InfoScreen extends StatelessWidget {
   }
 
   Future<void> _launchUrl() async {
-    if (!await launchUrl(_url)) {}
+    if (!await launchUrl(_url)) {
+      throw Exception("could not launch $_url");
+    }
   }
 }
