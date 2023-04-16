@@ -16,7 +16,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<PhotosModel> trendingWallList = [];
-  late List<CategoryModel> catModList;
+  late List<CategoryModel>? catModList;
   bool isLoading = true;
 
   getCatDetails() async {
@@ -63,11 +63,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: 50,
                 width: MediaQuery.of(context).size.width,
                 child: ListView.builder(
-                  itemCount: 30,
+                  itemCount: catModList?.length,
                   scrollDirection: Axis.horizontal,
                   itemBuilder: ((context, index) => CategoryBlock(
-                        categoryImgSrc: catModList[index].catImgUrl,
-                        categoryName: catModList[index].catName,
+                        categoryImgSrc: catModList![index].catImgUrl,
+                        categoryName: catModList![index].catName,
                       )),
                 ),
               ),
