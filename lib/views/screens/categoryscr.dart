@@ -126,7 +126,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                               child: Hero(
                                 tag: categoryResult[index].imgSrc,
                                 child: Container(
-                                  height: 1200,
+                                  height: 700,
                                   width: 50,
                                   decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(20),
