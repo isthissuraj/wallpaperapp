@@ -30,7 +30,7 @@ class InfoScreen extends StatelessWidget {
                 ),
                 const Text("source code"),
                 ElevatedButton(
-                    onPressed: _launchUrl, child: const Text("GitHub link"))
+                    onPressed: _launchUrl, child: const Text("GitHub link")),
               ],
             ),
           ),
