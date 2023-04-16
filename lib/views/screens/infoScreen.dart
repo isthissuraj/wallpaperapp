@@ -24,11 +24,11 @@ class InfoScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text(
+                const Text(
                   "developed by Suraj",
                   style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                 ),
-                Text("source code"),
+                const Text("source code"),
                 ElevatedButton(
                     onPressed: _launchUrl, child: const Text("GitHub link"))
               ],
