@@ -15,10 +15,13 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   late List<PhotosModel> searchResults;
+  bool isLoading = true;
 
   getSearchResult() async {
     searchResults = await ApiOperations.searchWallpapers(widget.query);
-    setState(() {});
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
@@ -37,59 +40,63 @@ class _SearchScreenState extends State<SearchScreen> {
         backgroundColor: Colors.white,
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: SearchBar(),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              height: MediaQuery.of(context).size.height,
-              child: GridView.builder(
-                  physics: const BouncingScrollPhysics(),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 2,
-                      mainAxisSpacing: 12,
-                      crossAxisSpacing: 12,
-                      mainAxisExtent: 400),
-                  itemCount: searchResults.length,
-                  itemBuilder: ((context, index) => InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => FullScreen(
-                                      imgUrl: searchResults[index].imgSrc)));
-                        },
-                        child: Hero(
-                          tag: searchResults[index].imgSrc,
-                          child: Container(
-                            height: 800,
-                            width: 50,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                              color: Colors.orangeAccent,
-                            ),
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(20),
-                              child: Image.network(
+      body: isLoading
+          ? Center(child: CircularProgressIndicator())
+          : SingleChildScrollView(
+              child: Column(
+                children: [
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 10),
+                    child: SearchBar(),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    height: MediaQuery.of(context).size.height,
+                    child: GridView.builder(
+                        physics: const BouncingScrollPhysics(),
+                        gridDelegate:
+                            const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                mainAxisSpacing: 12,
+                                crossAxisSpacing: 12,
+                                mainAxisExtent: 400),
+                        itemCount: searchResults.length,
+                        itemBuilder: ((context, index) => InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => FullScreen(
+                                            imgUrl:
+                                                searchResults[index].imgSrc)));
+                              },
+                              child: Hero(
+                                tag: searchResults[index].imgSrc,
+                                child: Container(
                                   height: 800,
                                   width: 50,
-                                  fit: BoxFit.cover,
-                                  searchResults[index].imgSrc),
-                            ),
-                          ),
-                        ),
-                      ))),
-            )
-          ],
-        ),
-      ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(20),
+                                    color: Colors.orangeAccent,
+                                  ),
+                                  child: ClipRRect(
+                                    borderRadius: BorderRadius.circular(20),
+                                    child: Image.network(
+                                        height: 800,
+                                        width: 50,
+                                        fit: BoxFit.cover,
+                                        searchResults[index].imgSrc),
+                                  ),
+                                ),
+                              ),
+                            ))),
+                  )
+                ],
+              ),
+            ),
     );
   }
 }
