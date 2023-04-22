@@ -4,7 +4,6 @@ WallHub is a wallpaper app in which you can download different types of wallpape
 
 ## Features
 
-- Light/dark mode toggle (soon)
 
 - set as wallpaper (soon)
 
