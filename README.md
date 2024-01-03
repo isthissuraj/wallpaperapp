@@ -1,4 +1,4 @@
-# wallpaperapp
+#wallpaperapp
 
 WallHub is a wallpaper app in which you can download different types of wallpaper.
 
