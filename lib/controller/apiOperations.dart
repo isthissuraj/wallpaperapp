@@ -15,7 +15,7 @@ class ApiOperations {
   static Future<List<PhotosModel>> getTrendingWallpapers() async {
     await http.get(Uri.parse("https://api.pexels.com/v1/curated"), headers: {
       "Authorization":
-          "2e7mdYOSgtT8kwaYmff5jqPrkgpTAKXkZfn6t0H1ns2nxdIm887fJ7aP"
+          "API_KEY"
     }).then((value) {
       Map<String, dynamic> jsonData = jsonDecode(value.body);
       List photos = jsonData["photos"];
