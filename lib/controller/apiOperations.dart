@@ -35,7 +35,7 @@ class ApiOperations {
             "https://api.pexels.com/v1/search?query=$query&per_page=30&page=1"),
         headers: {
           "Authorization":
-              "2e7mdYOSgtT8kwaYmff5jqPrkgpTAKXkZfn6t0H1ns2nxdIm887fJ7aP"
+              "API_KEY"
         }).then((value) {
       Map<String, dynamic> jsonData = jsonDecode(value.body);
       List photos = jsonData["photos"];
